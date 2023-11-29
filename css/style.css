@@ -1,0 +1,118 @@
+@import url(reset.css);
+body{
+    width: 100%;
+    background: #505050;
+}
+.wrapper{
+    width: 454px;
+    border: 2px solid #fff;
+    margin: 150px auto;
+}
+
+label{
+    color: #cdc662;
+    margin-bottom: 20px;
+    display: block;
+}
+    .form{
+        width: 300px;
+        margin: 40px auto;
+    }
+    #messegeResult{
+        border-radius: 25px;
+        height: 100px;
+        width: 300px;
+        background: url(../img/messege.png) no-repeat;
+        margin-bottom: 40px;
+    }
+        #messegeResult p{
+            color: #fff;
+            font: 400 16px 'PT Sans', sans-serif;
+            padding: 30px 20px;
+            text-align: center;
+        }
+    #formMain{
+        width: 300px;
+    }
+
+        #formMain input{
+            height: 50px;
+            border-radius: 25px;
+            border: none;
+            color: #e8e8e8;
+            font: 400 14px 'PT Sans', sans-serif;
+        }
+
+        #client_id{
+            width: 240px;
+            background: url(../img/name.png) no-repeat;
+            margin-bottom: 20px;
+            padding-left: 60px;
+            color: #e8e8e8;
+        }
+
+        #max_title{
+            width: 240px;
+            background: url(../img/messege.png) no-repeat;
+            margin-bottom: 20px;
+            padding-left: 60px;
+            color: #e8e8e8;
+        }
+
+        #min_title{
+            width: 240px;
+            background: url(../img/messege.png) no-repeat;
+            margin-bottom: 20px;
+            padding-left: 60px;
+            color: #e8e8e8;
+        }
+
+        #url_ads{
+            width: 240px;
+            background: url(../img/messege.png) no-repeat;
+            margin-bottom: 20px;
+            padding-left: 60px;
+            color: #e8e8e8;
+        }
+
+        #group_id{
+            width: 240px;
+            background: url(../img/messege.png) no-repeat;
+            margin-bottom: 20px;
+            padding-left: 60px;
+            color: #e8e8e8;
+        }
+
+        #client_secret{
+            width: 240px;
+            background: url(../img/name.png) no-repeat;
+            margin-bottom: 20px;
+            padding-left: 60px;
+        }
+        #button{
+            width: 300px;
+            font-size: 16px !important;
+            cursor: pointer;
+            /*градиент для кнопки*/
+            background: #0aa7ee; /* Old browsers */
+            background: -moz-linear-gradient(top, #0aa7ee 0%, #037bac 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#0aa7ee), color-stop(100%,#037bac)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top, #0aa7ee 0%,#037bac 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top, #0aa7ee 0%,#037bac 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top, #0aa7ee 0%,#037bac 100%); /* IE10+ */
+            background: linear-gradient(to bottom, #0aa7ee 0%,#037bac 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0aa7ee', endColorstr='#037bac',GradientType=0 );
+            -webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.40);
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.40);
+        }
+            #button:hover{
+                
+                background: #58ce2c; /* Old browsers */
+                background: -moz-linear-gradient(top, #58ce2c 0%, #3fbe10 100%); /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#58ce2c), color-stop(100%,#3fbe10)); /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top, #58ce2c 0%,#3fbe10 100%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(top, #58ce2c 0%,#3fbe10 100%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(top, #58ce2c 0%,#3fbe10 100%); /* IE10+ */
+                background: linear-gradient(to bottom, #58ce2c 0%,#3fbe10 100%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#58ce2c', endColorstr='#518d3a',GradientType=0 );
+            }

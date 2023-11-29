@@ -1,0 +1,109 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<meta name="description" content=""/>
+<meta name="Keywords" content=""/>
+<link href="css/style.css" type="text/css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    function AjaxFormRequest(result_id,formMain,url) {
+
+        if (window.FormData === undefined){
+        alert('В вашем браузере FormData не поддерживается')
+        } else {
+
+        let client_secret = document.getElementById("client_secret").value
+        let client_id = document.getElementById("client_id").value
+        let group_id = document.getElementById("group_id").value
+        let min_title = document.getElementById("min_title").value
+        let max_title = document.getElementById("max_title").value
+        let url_ads = document.getElementById("url_ads").value
+        
+        var formData = new FormData();
+
+        // $.each($("#js-file")[0].files,function(key, input){
+        //     formData.append('file[]', input);
+        // });
+
+        let arrayInfo = [];
+
+        arrayInfo.push({'title_40_vkads': min_title, 'text_90': max_title, 'primary': url_ads});
+  
+        console.log(arrayInfo);
+        formData.append('icon_256x256', $('input[type=file]')[0].files[0]);
+		formData.append('image_1080x607', $('input[type=file]')[1].files[0]);
+		formData.append('image_600x600', $('input[type=file]')[2].files[0]);
+		formData.append('image_1080x1350', $('input[type=file]')[3].files[0]);
+        
+		formData.append('info[]', JSON.stringify(arrayInfo));
+
+        // formData.append('title_40_vkads', min_title);
+        // formData.append('text_90', max_title);
+        // formData.append('cta_sites_full', url_ads);
+
+        formData.append('client_secret', client_secret);
+        formData.append('client_id', client_id);
+        formData.append('group_id', group_id);
+
+        // for (var key of formData.entries()) {
+        //     console.log(key[0] + ', ' + key[1]);
+        // }
+
+                jQuery.ajax({
+                    url:     url,
+                    type:     "POST",
+                    processData: false,
+                    contentType: false,
+                    data: formData, 
+                    success: function(response) {
+                    document.getElementById(result_id).innerHTML = response;
+                },
+                error: function(response) {
+                document.getElementById(result_id).innerHTML = "<p>Возникла ошибка при отправке формы. Попробуйте еще раз</p>";
+                }
+             });
+
+             $(':input','#formMain')
+ 				.not(':button, :submit, :reset, :hidden')
+ 				.val('')
+ 				.removeAttr('checked')
+ 				.removeAttr('selected');
+    }}
+</script>
+</head>
+<body>
+<div class="wrapper">
+   <div class="form">
+    <div id="messegeResult">
+        <p> Окно информации о выполнении запросов </p>
+    </div>
+       
+    <form method="post" action="" id="formMain" name="formMain">
+        <input id="client_id" type="text" name="client_id" placeholder="Введите client_id" autocomplete="off" required/>
+        <input id="client_secret" type="text" name="client_secret" placeholder="Введите client_secret" autocomplete="off" required/>
+        <input id="group_id" type="text" name="group_id" placeholder="Введите group_id" autocomplete="off" required/>
+
+        <input id="min_title" type="text" name="min_title" placeholder="Заголовок объявления" autocomplete="off" required/>
+        <input id="max_title" type="text" name="max_title" placeholder="Краткое описание" autocomplete="off" required/>
+        <label for="text">Адресс сайта или группы должен быть одобрен в лк кабинета. Пример http://dauken.ru/</label>
+        <input id="url_ads" type="text" name="url_ads" placeholder="Адресс сайта" autocomplete="off" required/>
+
+        <label for="file">Изображение иконка 256x256 (Обязательно)</label>
+        <input type="file" id="js-file" name="js-file" multiple="multiple" accept="image/*">
+        <label for="file">Изображение основное 1080x607 (Обязательно)</label>
+        <input type="file" id="js-file2" name="js-file2" accept="image/*">
+        <label for="file">Изображение основное 600x600 (По желанию)</label>
+        <input type="file" id="js-file3" name="js-file3" accept="image/*">
+        <label for="file">Изображение основное 1080x1350 (По желанию)</label>
+        <input type="file" id="js-file4" name="js-file4" accept="image/*">
+
+        <input id="button" type="button"  value="Добавить объявление" onclick="AjaxFormRequest('messegeResult', 'formMain', 'form.php')"/>
+    </form>
+   </div>
+</div>
+
+</body>
+</html>
