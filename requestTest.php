@@ -11,21 +11,21 @@
 В данном примере настроено объявление с целевым действием "САЙТ". */
 
 
-$url = 'https://srv0.ru/vkapi/form.php'; // Адресс скрипта
+$url = ''; // Адресс скрипта
 
 $arrayInfo = array(
 		array(
 		'title_40_vkads' => 'Заголовок2',
 		'text_90' => 'Краткое описание2',
-		'primary' => 'http://dauken.ru/' //ссылка на сайт (должна пройти модерацию)
+		'primary' => 'http://site.ru/' //ссылка на сайт (должна пройти модерацию)
 ));
    
 $fields = array(
 	//source не трогаем
 	     'source' => 'site',
-       'client_id' => '7z4u0wkZJOzXGcqQ',
-       'client_secret' => 'wTLhCjFQQHRGgg4mA5tiASKKOOsgzpXMDRCL0s2PDXEBwxPe2FEWA8fDpjdm1XFqVeDxjCZbp57dXWNLTerjHG7LPSRyGSY26CsktlOu9zc62f5g2HhseTG0jmZT9E4IS3Q4L1Q7cGZeIFyQNAJjnC39kwZeQ6lL8c3hWrU5H8zta9lduwajWYUJULngJSz7GlCqZLvPxeAZWpHwbuaehxOuyR', 
-       'group_id' => '88019190',
+       'client_id' => '',
+       'client_secret' => '', 
+       'group_id' => '',
        'info' => json_encode($arrayInfo),
     //Ключи не трогаем, меняем данные в curl_file_create (путь до изображения, тип, название)
     //Обязательные размеры (width и heigth должны строго соответствовать значениям)
