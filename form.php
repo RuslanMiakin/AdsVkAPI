@@ -100,6 +100,8 @@ function create($files_data, $access_token,
 	$arrayFieldsAD['name'] = 'Объявление ' . $dateToday;
 	
 	foreach ($files_data as $key => $value) {
+
+		$access_token = getTokens($client_id, 0);
 		//Получаем размеры изображения
 		$imageSize = getimagesize($value['tmp_name']);
 		$width = $imageSize[0];
@@ -155,6 +157,8 @@ function create($files_data, $access_token,
 			$arrayFieldsAD['textblocks'][$key] = array('text' => $value);
 		}
 	}
+
+	$access_token = getTokens($client_id, 0);
 
 	//Отправляем ссылку на проверку/записываем id
 	$primaryId = getIdByUrl($dataInfo['primary'], $access_token, $urlUrls);
