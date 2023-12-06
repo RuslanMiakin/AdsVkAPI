@@ -15,14 +15,14 @@ $url = ''; // Адресс скрипта
 
 $arrayInfo = array(
 		array(
-		'title_40_vkads' => 'Заголовок2',
-		'text_90' => 'Краткое описание2',
-		'primary' => 'http://site.ru/' //ссылка на сайт (должна пройти модерацию)
+		'title_40_vkads' => '',
+		'text_90' => '',
+		'primary' => '' //ссылка на сайт (должна пройти модерацию)
 ));
    
 $fields = array(
 	//source не трогаем
-	     'source' => 'site',
+	   'source' => 'site',
        'client_id' => '',
        'client_secret' => '', 
        'group_id' => '',
